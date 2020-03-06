@@ -296,6 +296,10 @@ along with this software (see the LICENSE.md file). If not, see
         <!-- for future reference when configurable products are supported: <field name="productConfigSavedId" type="id"/> -->
         <field name="productFeatureId" type="id"/>
         <field name="otherPartyProductId" type="text-short"/>
+        <field name="productParameterSetId" type="id">
+            <description>For a set of Product Parameters to personalize a Product and/or record details specific to a purchase of the Product.
+                If used represents a distinct Product instance (OrderItem, etc records should not be combined unless matches).</description>
+        </field>
 
         <field name="itemDescription" type="text-medium"/>
         <field name="comments" type="text-medium"/>
@@ -358,6 +362,7 @@ along with this software (see the LICENSE.md file). If not, see
         <relationship type="one" related="mantle.product.Product" short-alias="product"/>
         <!-- <relationship type="one" related="mantle.product.config.ProductConfigSaved"/> -->
         <relationship type="one" related="mantle.product.feature.ProductFeature" short-alias="feature"/>
+        <relationship type="one" related="mantle.product.ProductParameterSet" short-alias="productParameterSet"/>
         <relationship type="one" title="Quantity" related="moqui.basic.Uom" short-alias="quantityUom">
             <key-map field-name="quantityUomId"/></relationship>
 
@@ -416,6 +421,33 @@ along with this software (see the LICENSE.md file). If not, see
         <relationship type="one" related="mantle.product.issuance.AssetIssuance" short-alias="issuance"/>
         <relationship type="one" related="mantle.shipment.Shipment" short-alias="shipment"/>
     </entity>
+    <!-- use ProductParameterSet, ProductParameterValue instead:
+    <entity entity-name="OrderItemDimension" package="mantle.order" cache="never">
+        <field name="orderItemDimensionId" type="id" is-pk="true"/>
+        <field name="orderId" type="id" not-null="true"/>
+        <field name="orderItemSeqId" type="id" not-null="true"/>
+        <field name="uomDimensionTypeId" type="id"/>
+        <field name="value" type="number-decimal"/>
+        <field name="uomId" type="id"/>
+        <relationship type="one" related="mantle.order.OrderItem" short-alias="orderItem">
+            <key-map field-name="orderId"/><key-map field-name="orderItemSeqId"/></relationship>
+        <relationship type="one" related="moqui.basic.UomDimensionType" short-alias="type"/>
+        <relationship type="one" related="moqui.basic.Uom" short-alias="uom"/>
+    </entity>
+    <entity entity-name="OrderItemParameter" package="mantle.order" cache="never">
+        <field name="orderItemParameterId" type="id" is-pk="true"/>
+        <field name="orderId" type="id" not-null="true"/>
+        <field name="orderItemSeqId" type="id" not-null="true"/>
+        <field name="productIdTypeEnumId" type="id"/>
+        <field name="parameterName" type="text-short"/>
+        <field name="parameterValue" type="text-medium"/>
+        <relationship type="one" related="mantle.order.OrderItem" short-alias="orderItem">
+            <key-map field-name="orderId"/><key-map field-name="orderItemSeqId"/></relationship>
+        <relationship type="one" title="ProductIdentificationType" related="moqui.basic.Enumeration" short-alias="type">
+            <key-map field-name="productIdTypeEnumId"/></relationship>
+    </entity>
+    -->
+
     <entity entity-name="OrderNote" package="mantle.order" cache="never">
         <field name="orderId" type="id" is-pk="true"/>
         <field name="noteDate" type="date-time" is-pk="true" default="ec.user.nowTimestamp"/>

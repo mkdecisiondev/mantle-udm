@@ -270,10 +270,10 @@ along with this software (see the LICENSE.md file). If not, see
         <field name="paymentInstrumentEnumId" type="id" is-pk="true"/>
         <field name="paymentGatewayConfigId" type="id"/>
 
-        <field name="promiseInwardPayments" type="text-indicator" default="Y"><description>
+        <field name="promiseInwardPayments" type="text-indicator" default="'Y'"><description>
             Alkami field that is used to specify if payments that are entering this gateway should be created with the status 'PmntPromised' as opposed to just 'PmntProposed'
         </description></field>
-        <field name="promiseOutwardPayments" type="text-indicator" default="Y"><description>
+        <field name="promiseOutwardPayments" type="text-indicator" default="'Y'"><description>
             Alkami field that is used to specify if payments that are leaving this gateway should be created with the status 'PmntPromised' as opposed to just 'PmntProposed'
         </description></field>
 

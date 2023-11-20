@@ -280,7 +280,9 @@ along with this software (see the LICENSE.md file). If not, see
             Determines the logic that needs to be applied to create the payments
         </description></field>
 
-        <relationship type="one" title="PaymentDirection" related="moqui.basic.EnumerationType" short-alias="paymentDirection"/>
+        <relationship type="one" title="PaymentDirectionType" related="moqui.basic.Enumeration" short-alias="paymentDirection">
+            <key-map field-name="paymentDirectionType"/>
+        </relationship>
         <relationship type="one" related="mantle.product.store.ProductStore" short-alias="store"/>
         <relationship type="one" title="PaymentInstrument" related="moqui.basic.Enumeration" short-alias="paymentInstrument">
             <key-map field-name="paymentInstrumentEnumId"/></relationship>

@@ -276,12 +276,12 @@ along with this software (see the LICENSE.md file). If not, see
         <field name="promiseOutwardPayments" type="text-indicator" default="'Y'"><description>
             Alkami field that is used to specify if payments that are leaving this gateway should be created with the status 'PmntPromised' as opposed to just 'PmntProposed'
         </description></field>
-        <field name="paymentDirectionType" type="id"><description>
+        <field name="paymentFlowEnumId" type="id"><description>
             Determines the logic that needs to be applied to create the payments
         </description></field>
 
-        <relationship type="one" title="PaymentDirectionType" related="moqui.basic.Enumeration" short-alias="paymentDirection">
-            <key-map field-name="paymentDirectionType"/>
+        <relationship type="one" title="PaymentFlowEnumId" related="moqui.basic.Enumeration" short-alias="paymentFlow">
+            <key-map field-name="paymentFlowEnumId"/>
         </relationship>
         <relationship type="one" related="mantle.product.store.ProductStore" short-alias="store"/>
         <relationship type="one" title="PaymentInstrument" related="moqui.basic.Enumeration" short-alias="paymentInstrument">

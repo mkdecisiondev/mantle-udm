@@ -1438,7 +1438,11 @@ along with this software (see the LICENSE.md file). If not, see
         <field name="reconcileStatusId" type="id" default="'PmtrNot'"/>
         <field name="paymentMethodFileId" type="id"><description>If included in a file for processing, file ID goes here</description></field>
         <field name="nachaIin" type="text-short"><description>Included in a NACHA file's "Individual Identification Number" field when transmitting this payment. (columns 40-54: Individual or Company ID for company (15 chars))</description></field>
+        <field name="inwardPaymentId" type="id"><description>Points to the inward payment for each outward payment</description></field>
 
+        <relationship type="one" title="OutwardPaymentFor" related="mantle.account.payment.Payment" short-alias="inwardPaymentId">
+            <key-map field-name="inwardPaymentId"/>
+        </relationship>
         <relationship type="one" title="PaymentType" related="moqui.basic.Enumeration" short-alias="type">
             <key-map field-name="paymentTypeEnumId"/></relationship>
         <relationship type="one" title="PaymentInstrument" related="moqui.basic.Enumeration" short-alias="instrument">

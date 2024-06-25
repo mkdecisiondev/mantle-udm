@@ -1232,7 +1232,7 @@ along with this software (see the LICENSE.md file). If not, see
             <!-- Credit Card Type -->
             <moqui.basic.EnumerationType description="Credit Card Type" enumTypeId="CreditCardType"/>
             <moqui.basic.Enumeration description="Visa" enumId="CctVisa" enumTypeId="CreditCardType"/>
-            <moqui.basic.Enumeration description="Master Card" enumId="CctMastercard" enumTypeId="CreditCardType"/>
+            <moqui.basic.Enumeration description="Master Card" enumId="CctMasterCard" enumTypeId="CreditCardType"/>
             <moqui.basic.Enumeration description="American Express" enumId="CctAmericanExpress" enumTypeId="CreditCardType"/>
             <moqui.basic.Enumeration description="Discover" enumId="CctDiscover" enumTypeId="CreditCardType"/>
             <!-- for reference, these are rare and some don't exist any more:

@@ -191,6 +191,7 @@ along with this software (see the LICENSE.md file). If not, see
             <!-- Product Store Category Type -->
             <moqui.basic.EnumerationType description="Product Store Category Type" enumTypeId="ProductStoreCategoryType"/>
             <moqui.basic.Enumeration description="Home Page (One)" enumId="PsctHomePage" enumTypeId="ProductStoreCategoryType"/>
+            <moqui.basic.Enumeration description="Staff Page (One)" enumId="PsctStaff" enumTypeId="ProductStoreCategoryType"/>
             <moqui.basic.Enumeration description="Browse Root (One)" enumId="PsctBrowseRoot" enumTypeId="ProductStoreCategoryType"/>
             <moqui.basic.Enumeration description="Default Search (One)" enumId="PsctSearch" enumTypeId="ProductStoreCategoryType"/>
             <moqui.basic.Enumeration description="Quick Add (Many)" enumId="PsctQuickAdd" enumTypeId="ProductStoreCategoryType"/>
